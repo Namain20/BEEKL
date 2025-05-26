@@ -1,0 +1,316 @@
+DEBUG - 2025-05-26 09:20:50 --> Session: Initialization under CLI aborted.
+DEBUG - 2025-05-26 09:20:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 09:21:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 09:21:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 09:21:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 09:21:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 09:21:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 09:21:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 09:21:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 09:21:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 09:21:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 09:21:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 09:22:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 09:22:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 09:22:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 09:22:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 09:22:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 09:22:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-26 09:22:27 --> mysqli_sql_exception: Table 'beekl.likes' doesn't exist in C:\Users\johan\Documents\GitHub\BEEKL\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\johan\Documents\GitHub\BEEKL\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\johan\Documents\GitHub\BEEKL\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\johan\Documents\GitHub\BEEKL\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\johan\Documents\GitHub\BEEKL\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\johan\Documents\GitHub\BEEKL\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\johan\Documents\GitHub\BEEKL\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 C:\Users\johan\Documents\GitHub\BEEKL\app\Views\dashboard.php(574): CodeIgniter\BaseModel->first()
+#7 C:\Users\johan\Documents\GitHub\BEEKL\system\View\View.php(224): include('C:\\Users\\johan\\...')
+#8 C:\Users\johan\Documents\GitHub\BEEKL\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#9 C:\Users\johan\Documents\GitHub\BEEKL\system\Common.php(1173): CodeIgniter\View\View->render('dashboard', Array, true)
+#10 C:\Users\johan\Documents\GitHub\BEEKL\app\Controllers\Home.php(15): view('dashboard', Array)
+#11 C:\Users\johan\Documents\GitHub\BEEKL\system\CodeIgniter.php(933): App\Controllers\Home->index()
+#12 C:\Users\johan\Documents\GitHub\BEEKL\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#13 C:\Users\johan\Documents\GitHub\BEEKL\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#14 C:\Users\johan\Documents\GitHub\BEEKL\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#15 C:\Users\johan\Documents\GitHub\BEEKL\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#16 C:\Users\johan\Documents\GitHub\BEEKL\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#17 C:\Users\johan\Documents\GitHub\BEEKL\system\rewrite.php(44): require_once('C:\\Users\\johan\\...')
+#18 {main}
+CRITICAL - 2025-05-26 09:22:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'beekl.likes' doesn't exist
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `likes`
+WHERE `userID` = :userID:
+AND `postID` = :postID:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Views\dashboard.php(574): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\View\View.php(224): include('C:\\Users\\johan\\Documents\\GitHub\\BEEKL\\app\\Views\\dashboard.php')
+ 6 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('dashboard', [], true)
+ 8 APPPATH\Controllers\Home.php(15): view('dashboard', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\johan\\Documents\\GitHub\\BEEKL\\public\\index.php')
+CRITICAL - 2025-05-26 09:22:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'beekl.likes' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `likes`
+WHERE `userID` = \'6\'
+AND `postID` = \'1\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `likes`
+WHERE `userID` = \'6\'
+AND `postID` = \'1\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `likes`
+WHERE `userID` = :userID:
+AND `postID` = :postID:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Views\dashboard.php(574): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\View\View.php(224): include('C:\\Users\\johan\\Documents\\GitHub\\BEEKL\\app\\Views\\dashboard.php')
+ 8 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('dashboard', [], true)
+10 APPPATH\Controllers\Home.php(15): view('dashboard', [...])
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+12 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\johan\\Documents\\GitHub\\BEEKL\\public\\index.php')
+CRITICAL - 2025-05-26 09:22:27 --> [Caused by] mysqli_sql_exception: Table 'beekl.likes' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `likes`
+WHERE `userID` = \'6\'
+AND `postID` = \'1\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `likes`
+WHERE `userID` = \'6\'
+AND `postID` = \'1\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `likes`
+WHERE `userID` = \'6\'
+AND `postID` = \'1\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `likes`
+WHERE `userID` = :userID:
+AND `postID` = :postID:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Views\dashboard.php(574): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\View\View.php(224): include('C:\\Users\\johan\\Documents\\GitHub\\BEEKL\\app\\Views\\dashboard.php')
+ 9 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('dashboard', [], true)
+11 APPPATH\Controllers\Home.php(15): view('dashboard', [...])
+12 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+13 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+14 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+17 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+18 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\johan\\Documents\\GitHub\\BEEKL\\public\\index.php')
+DEBUG - 2025-05-26 09:22:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-26 09:22:33 --> mysqli_sql_exception: Table 'beekl.likes' doesn't exist in C:\Users\johan\Documents\GitHub\BEEKL\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\johan\Documents\GitHub\BEEKL\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\johan\Documents\GitHub\BEEKL\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\johan\Documents\GitHub\BEEKL\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\johan\Documents\GitHub\BEEKL\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\johan\Documents\GitHub\BEEKL\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\johan\Documents\GitHub\BEEKL\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 C:\Users\johan\Documents\GitHub\BEEKL\app\Views\dashboard.php(574): CodeIgniter\BaseModel->first()
+#7 C:\Users\johan\Documents\GitHub\BEEKL\system\View\View.php(224): include('C:\\Users\\johan\\...')
+#8 C:\Users\johan\Documents\GitHub\BEEKL\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#9 C:\Users\johan\Documents\GitHub\BEEKL\system\Common.php(1173): CodeIgniter\View\View->render('dashboard', Array, true)
+#10 C:\Users\johan\Documents\GitHub\BEEKL\app\Controllers\Home.php(15): view('dashboard', Array)
+#11 C:\Users\johan\Documents\GitHub\BEEKL\system\CodeIgniter.php(933): App\Controllers\Home->index()
+#12 C:\Users\johan\Documents\GitHub\BEEKL\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#13 C:\Users\johan\Documents\GitHub\BEEKL\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#14 C:\Users\johan\Documents\GitHub\BEEKL\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#15 C:\Users\johan\Documents\GitHub\BEEKL\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#16 C:\Users\johan\Documents\GitHub\BEEKL\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#17 C:\Users\johan\Documents\GitHub\BEEKL\system\rewrite.php(44): require_once('C:\\Users\\johan\\...')
+#18 {main}
+CRITICAL - 2025-05-26 09:22:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'beekl.likes' doesn't exist
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `likes`
+WHERE `userID` = :userID:
+AND `postID` = :postID:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Views\dashboard.php(574): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\View\View.php(224): include('C:\\Users\\johan\\Documents\\GitHub\\BEEKL\\app\\Views\\dashboard.php')
+ 6 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('dashboard', [], true)
+ 8 APPPATH\Controllers\Home.php(15): view('dashboard', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\johan\\Documents\\GitHub\\BEEKL\\public\\index.php')
+CRITICAL - 2025-05-26 09:22:33 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'beekl.likes' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `likes`
+WHERE `userID` = \'6\'
+AND `postID` = \'1\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `likes`
+WHERE `userID` = \'6\'
+AND `postID` = \'1\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `likes`
+WHERE `userID` = :userID:
+AND `postID` = :postID:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Views\dashboard.php(574): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\View\View.php(224): include('C:\\Users\\johan\\Documents\\GitHub\\BEEKL\\app\\Views\\dashboard.php')
+ 8 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('dashboard', [], true)
+10 APPPATH\Controllers\Home.php(15): view('dashboard', [...])
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+12 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\johan\\Documents\\GitHub\\BEEKL\\public\\index.php')
+CRITICAL - 2025-05-26 09:22:33 --> [Caused by] mysqli_sql_exception: Table 'beekl.likes' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `likes`
+WHERE `userID` = \'6\'
+AND `postID` = \'1\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `likes`
+WHERE `userID` = \'6\'
+AND `postID` = \'1\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `likes`
+WHERE `userID` = \'6\'
+AND `postID` = \'1\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `likes`
+WHERE `userID` = :userID:
+AND `postID` = :postID:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Views\dashboard.php(574): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\View\View.php(224): include('C:\\Users\\johan\\Documents\\GitHub\\BEEKL\\app\\Views\\dashboard.php')
+ 9 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('dashboard', [], true)
+11 APPPATH\Controllers\Home.php(15): view('dashboard', [...])
+12 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+13 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+14 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+17 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+18 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\johan\\Documents\\GitHub\\BEEKL\\public\\index.php')
+DEBUG - 2025-05-26 09:24:14 --> Session: Initialization under CLI aborted.
+DEBUG - 2025-05-26 09:24:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 09:32:39 --> Session: Initialization under CLI aborted.
+DEBUG - 2025-05-26 09:32:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 09:32:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-26 09:32:53 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`beekl`.`likes`, CONSTRAINT `likes_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in C:\Users\johan\Documents\GitHub\BEEKL\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\Users\johan\Documents\GitHub\BEEKL\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `li...', 0)
+#1 C:\Users\johan\Documents\GitHub\BEEKL\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `li...')
+#2 C:\Users\johan\Documents\GitHub\BEEKL\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `li...')
+#3 C:\Users\johan\Documents\GitHub\BEEKL\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `li...', Array, false)
+#4 C:\Users\johan\Documents\GitHub\BEEKL\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\johan\Documents\GitHub\BEEKL\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\johan\Documents\GitHub\BEEKL\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\Users\johan\Documents\GitHub\BEEKL\app\Controllers\SideMenu.php(107): CodeIgniter\Model->insert(Array)
+#8 C:\Users\johan\Documents\GitHub\BEEKL\system\CodeIgniter.php(933): App\Controllers\SideMenu->likePost_atHomePage('1')
+#9 C:\Users\johan\Documents\GitHub\BEEKL\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SideMenu))
+#10 C:\Users\johan\Documents\GitHub\BEEKL\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\johan\Documents\GitHub\BEEKL\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\johan\Documents\GitHub\BEEKL\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\johan\Documents\GitHub\BEEKL\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\johan\Documents\GitHub\BEEKL\system\rewrite.php(44): require_once('C:\\Users\\johan\\...')
+#15 {main}
+CRITICAL - 2025-05-26 09:32:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`beekl`.`likes`, CONSTRAINT `likes_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[Method: GET, Route: likePost_atHomePage/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `likes` (`userID`, `postID`) VALUES (:userID:, :postID:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\SideMenu.php(107): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SideMenu->likePost_atHomePage('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SideMenu))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\johan\\Documents\\GitHub\\BEEKL\\public\\index.php')
+CRITICAL - 2025-05-26 09:32:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`beekl`.`likes`, CONSTRAINT `likes_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `likes` (`userID`, `postID`) VALUES (\'6\', \'1\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `likes` (`userID`, `postID`) VALUES (\'6\', \'1\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `likes` (`userID`, `postID`) VALUES (:userID:, :postID:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\SideMenu.php(107): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SideMenu->likePost_atHomePage('1')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SideMenu))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\johan\\Documents\\GitHub\\BEEKL\\public\\index.php')
+CRITICAL - 2025-05-26 09:32:53 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`beekl`.`likes`, CONSTRAINT `likes_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `likes` (`userID`, `postID`) VALUES (\'6\', \'1\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `likes` (`userID`, `postID`) VALUES (\'6\', \'1\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `likes` (`userID`, `postID`) VALUES (\'6\', \'1\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `likes` (`userID`, `postID`) VALUES (:userID:, :postID:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\SideMenu.php(107): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SideMenu->likePost_atHomePage('1')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SideMenu))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\johan\\Documents\\GitHub\\BEEKL\\public\\index.php')
+DEBUG - 2025-05-26 09:32:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 09:36:55 --> Session: Initialization under CLI aborted.
+DEBUG - 2025-05-26 09:37:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 10:00:41 --> Session: Initialization under CLI aborted.
+DEBUG - 2025-05-26 10:00:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 10:00:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
